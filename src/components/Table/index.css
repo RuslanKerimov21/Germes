@@ -1,0 +1,63 @@
+.table-wrapper {
+    padding: 25px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.table-title {
+    font-size: 24px;
+    font-family: 'AdobeClean-BoldSemiCn';
+}
+
+.table {
+    overflow: auto;
+    margin-top: 40px;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+
+.tbody .tr {
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.th,
+td {
+    height: 40px;
+}
+
+.th.title {
+    text-align: left;
+    font-weight: normal;
+}
+
+.td.data {
+    white-space: nowrap;
+    padding-right: 31px;
+}
+
+.th.date {
+    color: #000;
+    border: 1px solid #fff;
+}
+
+.th.date,
+.td.control {
+    width: 30px;
+    padding: 5px 0;
+    text-align: center;
+    font-weight: normal;
+}
+
+.td.control {
+    font-size: 13px;
+    cursor: pointer;
+    transition: all .2s ease;
+    text-transform: uppercase;
+}
+
+.td.control:hover {
+    color: #000;
+    background: #1f66ff;
+}

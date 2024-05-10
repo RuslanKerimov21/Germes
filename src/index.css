@@ -1,0 +1,56 @@
+@import url('./global.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@font-face {
+  font-family: 'AdobeClean-Regular';
+  src: url(./assets/fonts/Adobe/AdobeClean-Regular.woff);
+}
+
+@font-face {
+  font-family: 'AdobeClean-BoldSemiCn';
+  src: url(./assets/fonts/Adobe/AdobeClean-BoldSemiCn.woff);
+}
+
+#root {
+  display: flex;
+  position: relative;
+}
+
+.page-container {
+  padding: 30px;
+  margin-top: 64px;
+}
+
+.mr-filter {
+  width: 239px;
+  padding: 10px;
+  display: flex;
+  border-radius: 5px;
+  background: #fff;
+  position: relative;
+  flex-direction: column;
+}
+
+.mr-label {
+  font-size: 13px;
+}
+
+.mr-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.mr-controls input {
+  width: 100%;
+}
+
+.mr-controls button {
+  top: 0;
+  right: 10px;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  margin-left: auto;
+}
