@@ -1,3 +1,4 @@
+import moment from "moment";
 import { STATUS_COLORS, DAYS_WEEK } from "../constants";
 
 function setRow(data) {
@@ -23,30 +24,6 @@ function setRow(data) {
     return DAYS;
 }
 
-function setRowData(data) {
-
-    let MONTH, YEAR;
-
-    let ARRAY_DATA = []
-
-    MONTH = data.getMonth() + 1
-
-    YEAR = data.getFullYear()
-
-    const DATE = new Date(YEAR, MONTH, 1);
-
-    while (DATE.getMonth() === MONTH) {
-
-        ARRAY_DATA.push(DAYS_WEEK[DATE.getDay()]);
-
-        DATE.setDate(DATE.getDate() + 1);
-
-    }
-
-    return ARRAY_DATA;
-}
-
-
 function sortsData(date, shedule) {
 
     let BACKGROUND;
@@ -57,25 +34,25 @@ function sortsData(date, shedule) {
 
         let SHEDULE = new Date(el.date).getDate();
 
+
         if (DAYS === SHEDULE) {
 
             switch (el.status) {
-                case 'НН':
-                    BACKGROUND = STATUS_COLORS.no_show;
+                case 'absence_from_work':
+                    BACKGROUND = STATUS_COLORS.absence_from_work;
                     break;
-                case 'ОТ':
-                    BACKGROUND = STATUS_COLORS.vacation;
+                case 'year_vacation':
+                    BACKGROUND = STATUS_COLORS.year_vacation;
                     break;
-                case 'Б':
-                    BACKGROUND = STATUS_COLORS.medical;
+                case 'sick_days':
+                    BACKGROUND = STATUS_COLORS.sick_days;
                     break;
-                case 'В':
-                    BACKGROUND = STATUS_COLORS.weekend;
+                case 'weekends':
+                    BACKGROUND = STATUS_COLORS.weekends;
                     break;
                 default:
                     BACKGROUND = STATUS_COLORS.working_days;
             }
-
         }
 
     });
@@ -84,11 +61,11 @@ function sortsData(date, shedule) {
 }
 
 
-function sortsDataStatus(date, shedule) {
+function sortsDataStatus(date, timesheet) {
 
     let STATUS;
 
-    shedule?.forEach(el => {
+    timesheet?.forEach(el => {
 
         let DAYS = date.getDate();
 
@@ -96,7 +73,23 @@ function sortsDataStatus(date, shedule) {
 
         if (DAYS === SHEDULE) {
 
-            STATUS = el.value;
+            switch (el.status) {
+                case 'absence_from_work':
+                    STATUS = 'НН';
+                    break;
+                case 'year_vacation':
+                    STATUS = 'ОТ';
+                    break;
+                case 'sick_days':
+                    STATUS = 'Б';
+                    break;
+                case 'weekends':
+                    STATUS = 'В';
+                    break;
+                case 'working_days':
+                    STATUS = el.works_hours;
+                    break;
+            }
 
         }
 
@@ -106,4 +99,24 @@ function sortsDataStatus(date, shedule) {
 
 }
 
-export { setRow, setRowData, sortsData, sortsDataStatus }
+function setDate(data) {
+
+    let DAYS = []
+
+    const END_DAY = moment(data.to)
+
+    const START_DAY = moment(data.from)
+
+    let DIFF_MARK = END_DAY.diff(START_DAY, 'day')
+
+    for (let i = 0; i < DIFF_MARK; i++) {
+
+        DAYS.push(moment(START_DAY).add(i, 'day'))
+
+    }
+
+    return DAYS;
+
+}
+
+export { setRow, sortsData, sortsDataStatus, setDate }

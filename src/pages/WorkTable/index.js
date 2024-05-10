@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Modals, Table } from "../../components";
 export default function WorkTablePage() {
-    const [data, setData] = useState()
+    const [date, setDate] = useState(null)
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(new Date());
     return (
@@ -20,8 +20,16 @@ export default function WorkTablePage() {
                 </div>
             </div>
             <div className="table-wrapper">
-                {open ? <Modals title="Редактирование ячейки" open={open} data={data} setOpen={setOpen} /> : null}
-                <Table open={open} setOpen={setOpen} setData={setData} data={value} />
+                {open ?
+                    <Modals
+                        setOpen={setOpen}
+                        data={date} open={open}
+                        title="Изменение графика"
+                    />
+                    :
+                    null
+                }
+                <Table data={value} open={open} setOpen={setOpen} setDate={setDate} />
             </div>
         </div>
     )

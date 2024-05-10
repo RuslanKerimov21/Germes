@@ -28,11 +28,13 @@ td {
 }
 
 .th.title {
+    padding: 0 24px;
     text-align: left;
     font-weight: normal;
 }
 
 .td.data {
+    padding: 11px 24px;
     white-space: nowrap;
     padding-right: 31px;
 }
@@ -60,4 +62,13 @@ td {
 .td.control:hover {
     color: #000;
     background: #1f66ff;
+}
+
+.td-controls {
+    position: absolute;
+}
+
+.service_number {
+    color: #0000006b;
+    font-size: 13px;
 }

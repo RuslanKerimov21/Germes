@@ -1,125 +1,85 @@
 const USER = {
-    username: "Дмитрий Иванченко",
+    CurrentUSerName: "Дмитрий Иванченко",
     staff: [
         {
-            username: "Иванов Иван Иванович",
+            name: "Иванов Иван Иванович",
             position: "Бригадир",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
-            position: "Бригадир",
+            name: "Петров Дима Фольфович",
+            position: "Кладовщик",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
-            position: "Бригадир",
+            name: "Владимир Владимирович Зюганов",
+            position: "Оператор",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
-            position: "Бригадир",
+            name: "Дима Билан Иванов",
+            position: "Оператор",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
+            name: "Артем Васильевич Иванов",
             position: "Бригадир",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
+            name: "Аида Владимировна Иванова",
             position: "Бригадир",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
-            position: "Бригадир",
+            name: "Джигеров Азим Кезимович",
+            position: "Сборщик",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
+            name: "Ваня Иванов Дмитриеску",
             position: "Бригадир",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
+            name: "Петр Петров Петрович",
             position: "Бригадир",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
         {
-            username: "Иванов Иван Иванович",
+            name: "Аня Петрова Ивановна",
             position: "Бригадир",
             ratio: 0.75,
             region: "Отбор",
-            employee_schedule: [
-                {
-                    status: 'От',
-                    date: '2024-05-20',
-                },
-            ]
+            service_number: '2627282882ТА',
+            timesheet: []
         },
     ]
 }
@@ -137,11 +97,10 @@ const POSITION = {
 }
 
 const STATUS_COLORS = {
-    vacation: '#BFE9FF',
-    medical: '#FFCDC3',
-    weekend: '#E6E9F0',
-    no_show: '#FF6964',
-    works: '#FFF5F2',
+    year_vacation: '#BFE9FF',
+    sick_days: '#FFCDC3',
+    weekends: '#E6E9F0',
+    absence_from_work: '#FF6964',
     working_days: '#78D4BA',
 }
 
@@ -155,4 +114,47 @@ const DAYS_WEEK = [
     'Вс',
 ]
 
-export { USER, COLORS, POSITION, DAYS_WEEK, STATUS_COLORS }
+const KEY_STATUS_OPTIONS = [
+    {
+        value: 'sick_days',
+        status: 'Больничный лист',
+        code: {
+            numeric: 19,
+            string: 'Б',
+        }
+    },
+    {
+        value: 'year_vacation',
+        status: 'Ежегодны отспуск',
+        code: {
+            numeric: 19,
+            string: 'ОТ',
+        }
+    },
+    {
+        value: 'maternity_leave',
+        status: 'Отпуск по беременности',
+        code: {
+            numeric: 19,
+            string: 'Б',
+        }
+    },
+    {
+        value: 'absence_from_work',
+        status: 'Неявка по невыясненным причинам (до выяснения обстоятельств)',
+        code: {
+            numeric: 19,
+            string: 'НН',
+        }
+    },
+    {
+        value: 'weekends',
+        status: 'Выходные дни',
+        code: {
+            numeric: 19,
+            string: 'НН',
+        }
+    }
+]
+
+export { USER, COLORS, POSITION, DAYS_WEEK, STATUS_COLORS, KEY_STATUS_OPTIONS }

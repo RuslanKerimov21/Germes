@@ -46,6 +46,11 @@
   width: 100%;
 }
 
+.modal-control select{
+  width: 100%;
+  height: 100%;
+}
+
 .mr-controls button {
   top: 0;
   right: 10px;
@@ -53,4 +58,26 @@
   cursor: pointer;
   position: absolute;
   margin-left: auto;
+}
+
+.modal-footer {
+  gap: 10px;
+  display: flex;
+}
+
+.mr-button {
+  padding: 10px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all .2s ease;
+}
+
+.mr-button.send{
+  color: #fff;
+  background: #1f66ff;
+}
+
+.mr-button.default{
+  color: #000;
+  background: #E6E9F0;
 }

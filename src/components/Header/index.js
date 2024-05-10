@@ -1,4 +1,5 @@
 import './index.css';
+import { USER } from '../../constants';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 export default function Header() {
     return (
@@ -13,7 +14,7 @@ export default function Header() {
                         </div>
                         <div className="profile">
                             <div className="avatar"></div>
-                            <span className='profile-name'>Иванов Даниил</span>
+                            <span className='profile-name'>{USER.CurrentUSerName}</span>
                         </div>
                     </div>
                 </div>
