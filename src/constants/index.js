@@ -105,13 +105,13 @@ const STATUS_COLORS = {
 }
 
 const DAYS_WEEK = [
+    'Вс',
     'Пн',
     'Вт',
     'Ср',
     'Чт',
     'Пт',
     'Сб',
-    'Вс',
 ]
 
 const KEY_STATUS_OPTIONS = [

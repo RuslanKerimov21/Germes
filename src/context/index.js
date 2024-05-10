@@ -20,7 +20,7 @@ function setRow(data) {
         DAYS.push({ week: DAYS_WEEK[DATE.getDay()], date: DATE })
 
     }
-
+    
     return DAYS;
 }
 
@@ -109,7 +109,7 @@ function setDate(data) {
 
     let DIFF_MARK = END_DAY.diff(START_DAY, 'day')
 
-    for (let i = 0; i < DIFF_MARK; i++) {
+    for (let i = 0; i <= DIFF_MARK; i++) {
 
         DAYS.push(moment(START_DAY).add(i, 'day'))
 
