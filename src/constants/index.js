@@ -81,6 +81,14 @@ const USER = {
             service_number: '2627282882ТА',
             timesheet: []
         },
+        {
+            name: "Аня Петрова Ивановна",
+            position: "Бригадир",
+            ratio: 0.75,
+            region: "Отбор",
+            service_number: '2627282882ТА',
+            timesheet: []
+        },
     ]
 }
 
@@ -102,6 +110,7 @@ const STATUS_COLORS = {
     weekends: '#E6E9F0',
     absence_from_work: '#FF6964',
     working_days: '#78D4BA',
+    maternity_leave: '#FFF5F2',
 }
 
 const DAYS_WEEK = [

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Modals, Table } from "../../components";
+import { USER } from '../../constants';
+import { Modals, Pagination, Table } from "../../components";
 export default function WorkTablePage() {
     const [date, setDate] = useState(null)
     const [open, setOpen] = useState(false);
@@ -30,6 +31,7 @@ export default function WorkTablePage() {
                     null
                 }
                 <Table data={value} open={open} setOpen={setOpen} setDate={setDate} />
+                <Pagination pageSize={10} items={USER.staff} />
             </div>
         </div>
     )

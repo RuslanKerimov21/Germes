@@ -18,8 +18,20 @@
 }
 
 .page-container {
+  overflow: auto;
+  height: 90vh;
   padding: 30px;
   margin-top: 64px;
+}
+
+.page-container::-webkit-scrollbar{
+  width: 0;
+  background: red;
+}
+
+.page-container::-webkit-scrollbar-track{
+  width: 0;
+  height: 0;
 }
 
 .mr-filter {

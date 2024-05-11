@@ -1,0 +1,19 @@
+.mr-paginations{
+    gap: 15px;
+    display: flex;
+    align-items: center;
+}
+.pagination-control{
+    gap: 5px;
+    padding: 15px;
+    display: flex;
+    font-size: 14px;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(245, 245, 245);
+}
+
+.pagination-control svg{
+    font-size: 17px;
+}

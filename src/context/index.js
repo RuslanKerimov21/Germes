@@ -20,7 +20,7 @@ function setRow(data) {
         DAYS.push({ week: DAYS_WEEK[DATE.getDay()], date: DATE })
 
     }
-    
+
     return DAYS;
 }
 
@@ -49,6 +49,9 @@ function sortsData(date, shedule) {
                     break;
                 case 'weekends':
                     BACKGROUND = STATUS_COLORS.weekends;
+                    break;
+                case 'maternity_leave':
+                    BACKGROUND = STATUS_COLORS.maternity_leave;
                     break;
                 default:
                     BACKGROUND = STATUS_COLORS.working_days;
@@ -85,6 +88,9 @@ function sortsDataStatus(date, timesheet) {
                     break;
                 case 'weekends':
                     STATUS = 'В';
+                    break;
+                case 'maternity_leave':
+                    STATUS = 'Р';
                     break;
                 case 'working_days':
                     STATUS = el.works_hours;
